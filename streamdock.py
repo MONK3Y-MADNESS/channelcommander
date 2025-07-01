@@ -15,7 +15,7 @@ class StreamDock(ABC):
     def disconnected(self):
         self.transport.disconnected()
 
-    def cleaerIcon(self, index):
+    def clearIcon(self, index):
         self.transport.keyClear(index)
 
     def clearAllIcon(self):
