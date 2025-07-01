@@ -1,4 +1,4 @@
-from streamdock import StreamDock
+from ajazz_akp05 import AJAZZ_AKP05
 from transport.hidtransport import HIDTransport
 
 class DeviceManager:
@@ -6,11 +6,18 @@ class DeviceManager:
         self.devices = []
 
     def enumerate(self):
-        # Example: discover connected devices (simplified mockup)
+        # Find connected HID devices
         paths = HIDTransport.enumerate_devices()
 
         for path in paths:
-            device = StreamDock(path)
+            # For now, assume everything is an AJAZZ_AKP05 — 
+            # you can improve this by checking VID/PID later.
+            device = AJAZZ_AKP05(path)
             self.devices.append(device)
 
         return self.devices
+
+    def listen(self):
+        while True:
+            for device in self.devices:
+                device.refresh()
