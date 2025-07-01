@@ -1,4 +1,4 @@
-#!/home/elite/workspace/github.com/MONK3Y-MADNESS/channelcommander/venv/bin/python3
+#!/home/elite/workspace/github.com/MONK3Y-MADNESS/channelcommander/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
