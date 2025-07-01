@@ -1,3 +1,4 @@
+import time
 from ajazz_akp05 import AJAZZ_AKP05
 from transport.hidtransport import HIDTransport
 
@@ -21,3 +22,4 @@ class DeviceManager:
         while True:
             for device in self.devices:
                 device.refresh()
+            time.sleep(0.05)
